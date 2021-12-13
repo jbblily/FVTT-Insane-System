@@ -23,8 +23,8 @@
 
           <div class="resource quater-width">
               <span>{{localize "INSANE.Curiosity"}}</span>
-              <select name="data.talent.curiosity">
-                  {{#select data.talent.curiosity}}
+              <select name="data.talent.field">
+                  {{#select data.talent.field}}
                   <option value="0">-</option>
                   <option value="1">{{localize "INSANE.A1"}}</option>
                   <option value="2">{{localize "INSANE.B1"}}</option>
@@ -50,7 +50,6 @@
       <a class="item" data-tab="description">{{localize "INSANE.Description"}}</a>
       <a class="item" data-tab="ability">{{localize "INSANE.Ability"}}</a>
       <a class="item" data-tab="bonds">{{localize "INSANE.Bonds"}}</a>
-      <a class="item" data-tab="items">{{localize "INSANE.Items"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -101,7 +100,7 @@
               {{#each data.tables}}  
               <tr>
                   <th>{{number}}</th>
-                  <td {{#ifEquals ../data.talent.curiosity 1}} class="active" {{/ifEquals}}></td>
+                  <td {{#ifEquals ../data.talent.field 1}} class="active" {{/ifEquals}}></td>
                   <td class="{{#if line.[0].state}} checked {{/if}} {{#if line.[0].fear}} feared {{/if}}" >
                       <input class="talent-checkbox" type="checkbox" name="{{line.[0].name}}.state" {{#if line.[0].state}} checked {{/if}} >
                       <input type="hidden" name="{{line.[0].name}}.num" value="{{line.[0].num}}">
@@ -109,7 +108,7 @@
                       <label class="talent-name" data-title="{{localTalent line.[0].title}}" data-num="{{line.[0].num}}" data-id="{{line.[0].id}}" data-fear="{{line.[0].fear}}">{{localTalent line.[0].title}}</label>
                   </td>
 
-                  <td {{#ifOrEquals ../data.talent.curiosity 1 ../data.talent.curiosity 2}} class="active" {{/ifOrEquals}}></td>
+                  <td {{#ifOrEquals ../data.talent.field 1 ../data.talent.field 2}} class="active" {{/ifOrEquals}}></td>
                   <td  class="{{#if line.[1].state}} checked {{/if}} {{#if line.[1].fear}} feared {{/if}}" >
                       <input class="talent-checkbox" type="checkbox" name="{{line.[1].name}}.state" {{#if line.[1].state}} checked {{/if}} >
                       <input type="hidden" name="{{line.[1].name}}.num" value="{{line.[1].num}}">
@@ -117,7 +116,7 @@
                       <label class="talent-name" data-title="{{localTalent line.[1].title}}" data-num="{{line.[1].num}}" data-id="{{line.[1].id}}" data-fear="{{line.[1].fear}}">{{localTalent line.[1].title}}</label>
                   </td>
 
-                  <td {{#ifOrEquals ../data.talent.curiosity 2 ../data.talent.curiosity 3}} class="active" {{/ifOrEquals}}></td>
+                  <td {{#ifOrEquals ../data.talent.field 2 ../data.talent.field 3}} class="active" {{/ifOrEquals}}></td>
 
                   <td class="{{#if line.[2].state}} checked {{/if}} {{#if line.[2].fear}} feared {{/if}}" >
                       <input class="talent-checkbox" type="checkbox" name="{{line.[2].name}}.state" {{#if line.[2].state}} checked {{/if}} >
@@ -126,7 +125,7 @@
                       <label class="talent-name" data-title="{{localTalent line.[2].title}}" data-num="{{line.[2].num}}" data-id="{{line.[2].id}}" data-fear="{{line.[2].fear}}">{{localTalent line.[2].title}}</label>
                   </td>
 
-                  <td {{#ifOrEquals ../data.talent.curiosity 3 ../data.talent.curiosity 4}} class="active" {{/ifOrEquals}}></td>
+                  <td {{#ifOrEquals ../data.talent.field 3 ../data.talent.field 4}} class="active" {{/ifOrEquals}}></td>
 
                   <td class="{{#if line.[3].state}} checked {{/if}} {{#if line.[3].fear}} feared {{/if}}" >
                       <input class="talent-checkbox" type="checkbox" name="{{line.[3].name}}.state" {{#if line.[3].state}} checked {{/if}} >
@@ -135,7 +134,7 @@
                       <label class="talent-name" data-title="{{localTalent line.[3].title}}" data-num="{{line.[3].num}}" data-id="{{line.[3].id}}" data-fear="{{line.[3].fear}}">{{localTalent line.[3].title}}</label>
                   </td>
 
-                  <td {{#ifOrEquals ../data.talent.curiosity 4 ../data.talent.curiosity 5}} class="active" {{/ifOrEquals}}></td>
+                  <td {{#ifOrEquals ../data.talent.field 4 ../data.talent.field 5}} class="active" {{/ifOrEquals}}></td>
 
                   <td class="{{#if line.[4].state}} checked {{/if}} {{#if line.[4].fear}} feared {{/if}}" >
                       <input class="talent-checkbox" type="checkbox" name="{{line.[4].name}}.state" {{#if line.[4].state}} checked {{/if}} >
@@ -144,7 +143,7 @@
                       <label class="talent-name" data-title="{{localTalent line.[4].title}}" data-num="{{line.[4].num}}" data-id="{{line.[4].id}}" data-fear="{{line.[4].fear}}">{{localTalent line.[4].title}}</label>
                   </td>
 
-                  <td {{#ifOrEquals ../data.talent.curiosity 5 ../data.talent.curiosity 6}} class="active" {{/ifOrEquals}}></td>
+                  <td {{#ifOrEquals ../data.talent.field 5 ../data.talent.field 6}} class="active" {{/ifOrEquals}}></td>
 
                   <td class="{{#if line.[5].state}} checked {{/if}} {{#if line.[5].fear}} feared {{/if}}" >
                       <input class="talent-checkbox" type="checkbox" name="{{line.[5].name}}.state" {{#if line.[5].state}} checked {{/if}} >
@@ -270,45 +269,6 @@
                       <p>{{{item.data.description}}}</p>
               </div>
             </li>
-          {{/each}}
-          </ol>
-        </div>
-      </div>
-
-      {{!-- Owned Items Tab --}}
-      <div class="tab items" data-group="primary" data-tab="items">
-        <div class="cell cell--common-talent">
-          <h2 class="cell--title">
-            <label>{{localize "INSANE.ItemsList"}}</label>
-            <div class="item-controls">
-              <button type="button" class="item-control item-create" data-type="item" >
-                <i class="fas fa-plus"></i>
-              </button>
-            </div>
-          </h2>
-          <ol class="items-list">
-          {{#each actor.itemList as |item id|}}
-            <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
-              <h4 class="item-name">
-                  <span class="echo-item"><img src="{{item.img}}" title="{{item.name}}" width="37" height="37" style="vertical-align : middle;margin-right:10px;"></i></span> 
-                  <span class="item-label">{{item.name}} X {{item.data.quantity}}
-
-                      <span class="item-details-toggle">
-                          <i class="fas fa-chevron-down"></i>
-                      </span>
-                  </span>
-              </h4>
-
-              <div class="item-controls">
-                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-              </div>
-              <div class="item-description">
-                <p>{{{item.data.description}}}</p>
-                <button type="button" class="use-item">{{localize "INSANE.UseItem"}}</button>
-              </div>
-            </li>
-            
           {{/each}}
           </ol>
         </div>

@@ -9,15 +9,7 @@
   "author": "ltaeng",
   "esmodules": ["module/insane.js"],
   "styles": ["styles/insane.css"],
-  "packs": [
-    {
-      "label": "Card Support",
-      "entity": "Macro",
-      "name": "card-support",
-      "path": "packs/card-support.db",
-      "system": "insane"
-    }
-  ],
+  "packs": [],
   "languages": [
     { "lang": "ko", "name": "Korean", "path": "lang/ko.json" },
     { "lang": "ja", "name": "日本語", "path": "lang/ja.json" }
@@ -27,7 +19,7 @@
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "sanity",
   "url": "https://github.com/ksx0330/FVTT-Insane-System",
-  "manifest": "https://raw.githubusercontent.com/ksx0330/FVTT-Insane-System/main/system.json",
-  "download": "https://codeload.github.com/ksx0330/FVTT-Insane-System/zip/main",
+  "manifest": "https://raw.githubusercontent.com/jbblily/FVTT-Insane-System/patch1/system.json",
+  "download": "https://codeload.github.com/jbblily/FVTT-Insane-System/zip/patch1",
   "license": "LICENSE.txt"
 }

@@ -2,15 +2,15 @@
 "Actor": {
   "types": ["character"],
   "character": {
-    "health": {
-      "value": 6,
+    "mana": {
+      "value": 3,
       "min": 0,
-      "max": 6
+      "max": 3
     },
-    "sanity": {
-      "value": 6,
+    "temp_mana": {
+      "value": 0,
       "min": 0,
-      "max": 6
+      "max": 0
     },
     "talent": {
         "table":[ 
@@ -21,34 +21,37 @@
             [{"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}], 
             [{"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}, {"state": false, "num": 12, "fear": false}] 
         ],
-        "curiosity": 0,
+        "field": 0,
         "fear": false
     },
     "details": {
         "age": "",
         "sex": "",
-        "job": "",
+        "nickname": "",
+        "level":"",
+        "career":"",
+        "institution":"",
         "exp": "",
         "biography": ""
     }
   }
 },
 "Item": {
-    "types": ["bond", "ability", "item"],
+    "types": ["bond", "grimoire"],
     "bond": {
         "residence": false,
         "secret": false,
         "feeling": "",
         "description": ""
     },
-    "ability": {
+    "grimoire": {
+        "cost":"",
         "type": "",
         "talent": "",
+        "target":"",
+        "charge":"",
+        "spell": false,
         "description": ""
-    },
-    "item": {
-        "description": "",
-        "quantity": 1
     }
 }
 }
